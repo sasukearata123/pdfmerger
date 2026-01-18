@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Merger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>PDF Merger</h1>
+        <p>Merge up to 3 PDFs (Max 3 pages each)</p>
+      </header>
+
+      <main>
+        <div class="upload-container" id="drop-zone">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Drag & Drop PDFs here</h3>
+          <p>or</p>
+          <button id="select-files-btn" class="secondary-btn">Select Files</button>
+          <input type="file" id="file-input" accept="application/pdf" multiple hidden>
+        </div>
+
+        <div id="error-message" class="error-toast hidden"></div>
+
+        <div class="files-list" id="files-list">
+          <!-- File items will be injected here -->
+        </div>
+
+        <div class="actions">
+          <button id="merge-btn" class="primary-btn" disabled>Merge PDFs</button>
+        </div>
+
+        <div id="result-container" class="hidden">
+           <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+           </div>
+           <p>PDFs Merged Successfully!</p>
+           <button id="download-btn" class="download-btn">Download Merged PDF</button>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
